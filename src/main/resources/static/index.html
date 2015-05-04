@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <title>YieldStreet ROI Test</title>
+    <link rel="stylesheet" href="./bower_components/bootstrap-css-only/css/bootstrap.min.css"/>
+</head>
+
+<body ng-app="roiApp">
+<div class="container" ng-controller="AppController">
+    <h1>Investor's ROI</h1>
+    <label>Investor:
+        <span class="nullable">
+            <select ng-model="investor" ng-options="investor.name for investor in investors">
+                <option value="">-- Select Investor --</option>
+            </select>
+        </span>
+    </label>
+    <label>
+        Year:
+        <select ng-model="activeYear" ng-disabled="!investor" _ng-options="...activeYears(investor)"/>
+    </label>
+</div>
+<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="./bower_components/angular-resource/angular-resource.min.js"></script>
+<script type="text/javascript" src="./app/app.js"></script>
+<script type="text/javascript" src="./app/controllers.js"></script>
+<script type="text/javascript" src="./app/services.js"></script>
+</body>
+</html>
